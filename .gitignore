@@ -1,0 +1,9 @@
+# Ignore files
+node_modules/
+dist/
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+# lock files
+package-lock.json
