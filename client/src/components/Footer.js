@@ -2,7 +2,8 @@ import React from 'react';
 // importing CSS file as a dependency
 import '../styles/Style.css';
 
-function Footer({ currentPage, handlePageChange }) {
+//function Footer({ currentPage, handlePageChange }) {
+    function Footer({ currentPage }) {
   return (
     <ul className="nav footer nav-tabs">
       <li className="nav-item">
@@ -25,7 +26,7 @@ function Footer({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#email"
+          href="contact"
           // if the current page is "Email"
           // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
           className={currentPage === 'Email' ? 'nav-link active' : 'nav-link'}
@@ -35,7 +36,7 @@ function Footer({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#phone"
+          href="contact"
           // if the current page is "Phone"
           // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
           className={currentPage === 'Phone' ? 'nav-link active' : 'nav-link'}
