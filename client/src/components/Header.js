@@ -1,4 +1,6 @@
-
+import React from 'react';
+// importing CSS file as a dependency
+import Navigation from './Navigation';
 function Header({currPage}) {
     return (
       <div>
