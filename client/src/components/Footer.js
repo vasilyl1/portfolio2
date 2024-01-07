@@ -3,15 +3,13 @@ import React from 'react';
 import '../styles/Style.css';
 
 //function Footer({ currentPage, handlePageChange }) {
-    function Footer({ currentPage }) {
+    function Footer() {
   return (
     <ul className="nav footer nav-tabs">
       <li className="nav-item">
         <a
           href="https://github.com/vasilyl1"
-          // if the current page is "GitHub"
-          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-          className={currentPage === 'GitHub' ? 'nav-link active' : 'nav-link'}
+          className='nav-link'
         >
           GitHub
         </a>
@@ -19,7 +17,7 @@ import '../styles/Style.css';
       <li className="nav-item">
         <a
           href="https://www.linkedin.com/in/vlikhovaido/"
-          className={currentPage === 'GitHub' ? 'nav-link active' : 'nav-link'}
+          className='nav-link'
         >
           LinkedIn
         </a>
@@ -27,9 +25,7 @@ import '../styles/Style.css';
       <li className="nav-item">
         <a
           href="contact"
-          // if the current page is "Email"
-          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-          className={currentPage === 'Email' ? 'nav-link active' : 'nav-link'}
+          className='nav-link'
         >
           likhovaido@gmail.com
         </a>
@@ -37,9 +33,7 @@ import '../styles/Style.css';
       <li className="nav-item">
         <a
           href="contact"
-          // if the current page is "Phone"
-          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-          className={currentPage === 'Phone' ? 'nav-link active' : 'nav-link'}
+          className='nav-link'
         >
           705.300.0993
         </a>
