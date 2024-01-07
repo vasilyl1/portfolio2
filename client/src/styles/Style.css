@@ -1,0 +1,305 @@
+
+/* color scheme  */
+:root {
+    --menu-background-color: rgba(10, 15, 18, 0.115);
+    --outer-space: #33393f;
+    --bright-turquoise: #42c1eb;
+    --gin: #0f6283;
+    --heliotrope: #e866ec;
+    --text-white: white;
+  }
+  
+  /* Set background color of the page */
+  body {
+    background-color: var(--menu-background-color);
+    line-height: normal;
+  }
+  
+  /* Add a black background color to the top navigation */
+  .nav, .header {
+    overflow: hidden;
+    background-color: var(--outer-space);
+  }
+  
+  /* Style the links inside the navigation bar */
+  a.menu, a.nav-link {
+    float: right; 
+    color: var(--gin);
+    /*text-align: center;*/
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .footer {
+    background-color: var(--menu-background-color);
+    line-height: normal;
+  }
+  
+  /* Change the color of links on hover */
+  a.nav-link:hover, button.nav-link:hover {
+    background-color: var(--gin);
+    color: var(--outer-space);
+    cursor: pointer;
+  }
+  
+  /* Add a color to the active/current link */
+  .menu a.active, .header h1 {
+    background-color: var(--bright-turquoise);
+    color: var(--outer-space);
+    font-size: 190%;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  /* set the style for the button at the contact forms */
+  button.nav-link {
+    background-color: var(--bright-turquoise);
+    color: var(--outer-space);
+    font-size: 110%;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  /* align all but active menu options to the right */
+  .notactive a {
+    float:right;
+    /*text-align: right;*/
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+  
+  
+  /* set the size of the background image under the header menu */
+  
+  .hdr1 {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/image1.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /*set avatar photo properties */
+  .hdr1 img{
+    border-radius: 8px;
+    width: 10%;
+    margin-top: -20%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+  }
+  /* align the header to the right */
+  .hdr1 h1 {
+    text-align: center;
+    font-size: 120%;
+    margin-right: -5%;
+    margin-bottom: 5%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    color: var(--outer-space);
+  }
+  
+  /* organize flexbox for 2 sections side by side */
+  .n2body{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  /* Set the size for the fixed width box on the left */
+  .n2body-left {
+    display:flex;
+    flex-basis: 25%;
+    flex-direction: column;
+  }
+  /* format about me work contact me blocks */
+  .n2body-left-1, .n2body-left-2, .n2body-left-3 {
+    display: flex;
+    flex-direction: column;
+    border-style: none solid none none;
+    border-width: 3px;
+    border-color: var(--gin);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 1%;
+  }
+  
+  .n2body-left-1{
+    flex-basis: 35%;
+  }
+  
+  .n2body-left-2{
+    flex-basis: 95%;
+  }
+  
+  .n2body-left-3{
+    flex-basis: 21%;
+  }
+  
+  /* format about me / work / contact me headers */
+  .n2body-left-1 h1, .n2body-left-2 h1, .n2body-left-3 h1 {
+    margin-right: 5%;
+    text-align: right;
+    font-size: 190%;
+    color: var(--gin);
+  }
+  
+  .n2body-left-2 h1 {
+    text-align: left;
+  }
+  
+  /* Set the size for the fixed width box on the right */
+  .n2body-right {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis:98%;
+    margin-right: 2%;
+  }
+  
+  /* each box with project except the first to have 
+  it's own background image */
+  
+  .n2body-right-1 {
+    display: flex;
+    flex-direction:column;
+    flex-basis:90%;
+    flex-wrap: wrap;
+    margin: 1%;
+  }
+  
+  .n2body-right-2 {
+    
+    background-image: url(../images/cryptocoin.png);
+    background-size: cover;
+    background-position: 2% 29%;
+    display:flex;
+    flex-direction:column;
+    flex-basis:98%;
+    margin:1%;
+  }
+  
+  .n2body-right-3, .n2body-right-4, .n2body-right-5, .n2body-right-6, .n2body-right-7 {
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction:column;
+    flex-basis:48%;
+    margin:1%;
+  }
+  
+  .n2body-right-3 {
+  
+     background-image: url(../images/imgProj2.png);
+     background-size: cover;
+     background-position: 2% 29%;
+     display:flex;
+     flex-direction:column;
+     flex-basis:98%;
+     margin:1%;
+   }
+  
+  .n2body-right-4 {
+    background-image: url(../images/SLC.png);
+  }
+  
+  .n2body-right-5 {
+    background-image: url(../images/png3a.png);
+  }
+  
+  .n2body-right-6 {
+    background-image: url(../images/png4a.png);
+  }
+  
+  .n2body-right-7 {
+    background-image: url(../images/png5a.png);
+  }
+  
+  /* glowing the picture boxes on hovering */
+  .box2, .box3, .box4, .box5, .box6, .box7 {
+    display:flex;
+    flex-direction:column;
+  }
+  
+  .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover {
+    box-shadow: inset 0px 0px 8px #0f6283, 0 0 15px #234e60;
+    backdrop-filter: sepia(50%);
+  }
+  
+  /* formatting for the links to the projects */
+  .n2body-right-2 a {
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 13%;
+    /*color: var(--text-white);*/
+    color: var(--outer-space);
+    margin-left: 5%;
+  
+  }
+  
+  .n2body-right-7 a, .n2body-right-6 a, .n2body-right-5 a, .n2body-right-4 a, .n2body-right-3 a {
+    font-size: 110%;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 16%;
+    color: #04090d;
+    margin-left: 5%;
+  }
+  
+  .n2body-right-2 h2, a.h2 {
+    font-size: 60%;
+    margin-bottom: 3%;
+    margin-top: -2%;
+    /*color: var(--text-white);*/
+    color: var(--outer-space);
+    margin-left: 5%;
+    overflow-wrap: break-word;
+  }
+  
+  
+  
+  .n2body-right-7 h2, .n2body-right-6 h2, .n2body-right-5 h2, .n2body-right-4 h2, .n2body-right-3 h2, a.h3 {
+    font-size: 60%;
+    margin-bottom: 5%;
+    margin-top: -3%;
+    color: var(--outer-space);
+    margin-left: 5%;
+    overflow-wrap: break-word;
+  }
+  
+  a.h3 {
+    font-size: 90%
+  }
+  
+  .n2body-right-3 h2 {
+    color: var(--outer-space);
+  }
+  
+  .form {
+    margin: 20px;
+  }
+  
+  .form input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 30px;
+  }
+  
+  input.inputMessage {
+    height: 80px;
+  }
+  
+  
+  /* hide the left side design for the smaller devices (mobiles) */
+  
+  @media screen and (max-width: 300px) {
+    .n2body-left {
+      display: none;
+    }
+  }
+  
