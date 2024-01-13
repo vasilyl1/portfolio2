@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import '../styles/Style.css';
 import Tabs from './Tabs';
 import About from './tabs/About';
 import Project from './tabs/Project';

@@ -1,10 +1,10 @@
 import React from 'react';
-//import '../../styles/Style.css';
 
 function About() {
     return (
-        <div className='n2body-left-1'>
+        <div className='n2body-left-2'>
             <h1>About me</h1>
+            <br></br>
             <p>Full Stack Web Developer leveraging background in enterprise sales and business management to provide unique perspectives on how end-users interact with websites and software platforms.</p> <br></br>
             <p>Innovative problem-solver passionate about developing apps focusing on front-end enterprise design and development. Strengths in creativity, teamwork and operational business management.</p><br></br>
             <p>Technical Languages: HTML, CSS, JavaScript</p><br></br>
