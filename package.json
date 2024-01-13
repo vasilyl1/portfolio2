@@ -4,29 +4,27 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
-      "start": "npm run build && cd server && node server.js",
-      "server": "cd server nodemon server.js --ignore client",
-      "build": "cd client && npm run build",
-      "install": "cd server && npm i && cd ../client && npm i",
-      "client": "cd client && npm start"
+        "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
+        "start": "npm run build && cd server && node server.js",
+        "server": "cd server nodemon server.js --ignore client",
+        "build": "cd client && npm run build",
+        "install": "cd server && npm i && cd ../client && npm i",
+        "client": "cd client && npm start"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/vasilyl1/portfolio2.git"
+        "type": "git",
+        "url": "git+https://github.com/vasilyl1/portfolio2.git"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/vasilyl1/portfolio2/issues"
+        "url": "https://github.com/vasilyl1/portfolio2/issues"
     },
     "homepage": "https://github.com/vasilyl1/portfolio2#readme",
-   
     "devDependencies": {
-      "concurrently": "^5.2.0",
-      "nodemon": "^2.0.4",
-      "@babel/plugin-proposal-private-property-in-object":"7.21.11"
+        "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+        "concurrently": "^5.2.0",
+        "nodemon": "^2.0.4"
     }
-  }
-  
+}

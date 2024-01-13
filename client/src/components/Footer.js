@@ -1,6 +1,6 @@
 import React from 'react';
 // importing CSS file as a dependency
-import '../styles/Style.css';
+//import '../styles/Style.css';
 
 //function Footer({ currentPage, handlePageChange }) {
     function Footer() {

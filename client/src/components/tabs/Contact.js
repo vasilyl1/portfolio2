@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/Style.css';
+//import '../../styles/Style.css';
 import { validateEmail } from '../utils/helpers';
 
 function Contact() {

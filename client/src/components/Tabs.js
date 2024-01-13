@@ -1,41 +1,45 @@
-import React from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import React from 'react'
+import { Disclosure } from '@headlessui/react'
 
 const navigation = [
-  { name: 'About', href: 'about', current: true, page: 'About' },
-  { name: 'Portfolio', href: 'portfolio', current: false, page: 'Portfolio' },
-  { name: 'Contact', href: 'contact', current: false, page: 'Contact' },
-  { name: 'Resume', href: 'resume', current: false, page: 'Resume' },
-]
+  { name: 'About', href: 'about', page: 'About' },
+  { name: 'Portfolio', href: 'portfolio', page: 'Portfolio' },
+  { name: 'Contact', href: 'contact', page: 'Contact' },
+  { name: 'Resume', href: 'resume', page: 'Resume' },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 function Tabs({ currentPage, handlePageChange }) {
- 
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-shrink-0 items-center">
+                  <img
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    alt="Your Company"
+                  />
+                </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
-                        onClick={() => handlePageChange(item.page)}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          (item.name == currentPage) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
+                        onClick={() => handlePageChange(item.page)}
                       >
                         {item.name}
                       </a>
@@ -52,6 +56,7 @@ function Tabs({ currentPage, handlePageChange }) {
                   key={item.name}
                   as="a"
                   href={item.href}
+                  onClick={() => handlePageChange(item.page)}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
@@ -67,7 +72,7 @@ function Tabs({ currentPage, handlePageChange }) {
       )}
     </Disclosure>
   )
-        }
+}
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
