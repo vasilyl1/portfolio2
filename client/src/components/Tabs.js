@@ -35,7 +35,7 @@ function Tabs({ currentPage, handlePageChange }) {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          (item.name == currentPage) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          (item.name === currentPage) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -72,55 +72,6 @@ function Tabs({ currentPage, handlePageChange }) {
       )}
     </Disclosure>
   )
-}
-
-// Here we are using object destructuring assignment to pluck off our variables from the props object
-// We assign them to their own variable names
-function Tabs1({ currentPage, handlePageChange }) {
-  return (
-    <ul className="nav nav-tabs" key="tabs" >
-      <li className="nav-item">
-        <a
-          href="resume"
-          onClick={() => handlePageChange('Resume')}
-          // Check to see if the currentPage is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-        >
-          Resume
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="contact"
-          onClick={() => handlePageChange('Contact')}
-          // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-        >
-          Contact
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="portfolio"
-          onClick={() => handlePageChange('Portfolio')}
-          // Check to see if the currentPage is `Blog`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
-        >
-          Portfolio
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="about"
-          onClick={() => handlePageChange('About')}
-          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-        >
-          About
-        </a>
-      </li>
-    </ul>
-  );
 }
 
 export default Tabs;

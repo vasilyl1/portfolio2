@@ -14,30 +14,29 @@ function App() {
       <Routes>
       <Route
           path="/"
-          element={<Header currPage='About' />}
+          element={<> <Header currPage='About' /> <Footer /> </>}
         />
         <Route
           path="/about"
-          element={<Header currPage='About' />}
+          element={<> <Header currPage='About' /> <Footer /> </>}
         />
         <Route
           path="/portfolio"
-          element={<Header currPage='Portfolio' />}
+          element={<> <Header currPage='Portfolio' /> <Footer /> </>}
         />
         <Route
           path="/contact"
-          element={<Header currPage='Contact' />}
+          element={<> <Header currPage='Contact' /> <Footer /> </>}
         />
         <Route
           path="/resume"
-          element={<Header currPage='Resume' />}
+          element={<> <Header currPage='Resume' /> <Footer /> </>}
         />
         <Route
               path='*'
               element={<PageNotFound />} 
         />
       </Routes>
-      <Footer />
     </Router>
   );
 }
