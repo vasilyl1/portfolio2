@@ -6,7 +6,7 @@ const projects = [
         repo:'https://github.com/vasilyl1/crypto-coin',
         href: 'https://cryptocoin.herokuapp.com/',
         tech:'REACT / MERN / Apollo /JavaScript / JWT / Bcrypt / GraphQL / Bootstrap',
-        image:'./images/cryptocoin.png',
+        image:'./images/crypto.png',
         imageAlt:'Image of Crypto Coin application'
     },
     {
@@ -33,7 +33,7 @@ const projects = [
         repo:'https://github.com/vasilyl1/CMS-blog',
         href: 'https://cms-blog-vl.herokuapp.com/',
         tech:'Handlebars / JavaScript / CSS/Node / Express / Sequelize / MySQL / Bcrypt',
-        image:'./images/png3a.png',
+        image:'./images/techblog.png',
         imageAlt:'Image of CMS blog application'
     },
     {
@@ -42,7 +42,7 @@ const projects = [
         repo:'https://github.com/vasilyl1/work-day-scheduler/',
         href: 'https://vasilyl1.github.io/work-day-scheduler/',
         tech:'Handlebars / JavaScript / CSS/Node / Express / Sequelize / MySQL / Bcrypt',
-        image:'./images/png4a.png',
+        image:'./images/calendar.png',
         imageAlt:'Image of Calendar application'
     },
     {
@@ -51,7 +51,7 @@ const projects = [
         repo:'https://github.com/vasilyl1/weather-dashboard',
         href: 'https://vasilyl1.github.io/weather-dashboard',
         tech:'API / JavaScript / CSS',
-        image:'./images/png5a.png',
+        image:'./images/weather.png',
         imageAlt:'Image of weather dashboard application'
     }
 ];
