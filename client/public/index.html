@@ -52,7 +52,7 @@
         console.log("omit service worker (not needed)");
       } else {
         console.log("register service worker for edge and chrome (and the rest)");
-        navigator.serviceWorker.register('simple_sw.js').then(function(reg) {
+        navigator.serviceWorker.register('%PUBLIC_URL%/simple_sw.js').then(function(reg) {
           // registration worked
           console.log('Registration succeeded. Scope:' + reg.scope + ",installing:"+reg.installing+",waiting:"+reg.waiting+",active:"+reg.active);
         }).catch(function(error) {
