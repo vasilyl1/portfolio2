@@ -25,8 +25,9 @@ function Tabs({ currentPage, handlePageChange }) {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <img
-                    className="h-8 w-8"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    className="h-8 w-8 rounded-md"
+                    //src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src="./../logo192.png"
                     alt="Your Company"
                   />
                 </div>
