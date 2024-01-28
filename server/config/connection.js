@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/portfolio2', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  authSource: 'admin',
+  retryWrites: true,
+  ssl: true
 });
 
 module.exports = mongoose.connection;
