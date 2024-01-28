@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validateEmail } from '../utils/helpers';
 
 function Contact() {
@@ -7,6 +7,26 @@ function Contact() {
   const [userName, setUserName] = useState('');
   const [message, setMessage] = useState('');
   const [resultMessage, setResultMessage] = useState('');
+  // this state is used to save validated json data to be sent to the backend
+  const [api, setApi] = useState(null);
+  // this hook will run every time the api state is updated
+  useEffect(() => {
+    const abc = async () => {
+      if (api) { // call backend only if there is data in the state
+        try {
+          await fetch('/api/comment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(api),
+          });
+        } catch (err) {
+          console.error(err);
+        }
+        setApi(null);
+      }
+    };
+    abc();
+  }, [api]);
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -17,7 +37,7 @@ function Contact() {
     // Based on the input type, set the state of either email, username, and password
     if (inputType === 'email') {
       setEmail(inputValue);
-    } else if (inputType === 'userName') {
+    } else if (inputType === 'Your Name') {
       setUserName(inputValue);
     } else {
       setMessage(inputValue);
@@ -47,6 +67,7 @@ function Contact() {
       // check to see if the password is not valid. If so, set an error message regarding the password.
     } else {
       setResultMessage('Thank you for leaving your message!');
+      setApi({ userName, email, message });
     }
 
     // If everything goes according to plan, clear out the input after a successful registration.
@@ -74,7 +95,7 @@ function Contact() {
                 <div className="mt-2">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
-                      type="userName"
+                      type="userNameInput"
                       name="Your Name"
                       id="username"
                       value={userName}

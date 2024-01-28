@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('./config/connection');
 const path = require('path');
 
 const app = express();
@@ -10,4 +11,8 @@ app.use(express.json());
 
 require('./routes/htmlRoutes')(app);
 
-app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
+db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`Backend server listening on port ${PORT}`);
+    });
+  });
