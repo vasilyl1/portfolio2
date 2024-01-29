@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { validateEmail } from '../utils/helpers';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -7,9 +8,47 @@ function Contact() {
   const [userName, setUserName] = useState('');
   const [message, setMessage] = useState('');
   const [resultMessage, setResultMessage] = useState('');
+
   // this state is used to save validated json data to be sent to the backend
   const [api, setApi] = useState(null);
-  // this hook will run every time the api state is updated
+
+  // this state is to use google captcha
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [captchaSuccess, setCaptchaSuccess] = useState(false);
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const Captcha = (value) => {
+    console.log('Captcha value:', value);
+  };
+
+  // Verify the CAPTCHA token with the backend
+  useEffect(() => {
+    const verifyCaptcha = async () => {
+      if (captchaToken) {//call backend only if there is a token
+        try {
+          const response = await fetch('/api/captcha', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token: captchaToken }),
+          });
+          const data = await response.json();
+          console.log(data);
+          // Proceed with further action based on the verification response
+          setCaptchaSuccess(data.success);
+        } catch (err) {
+          console.error(err);
+        }
+        setCaptchaToken(null);
+      };
+    };
+    verifyCaptcha();
+  }, [captchaToken]);
+
+
+  // this hook will run every time the api state is updated. api state contains validated form data
   useEffect(() => {
     const abc = async () => {
       if (api) { // call backend only if there is data in the state
@@ -64,7 +103,6 @@ function Contact() {
       setResultMessage('Please enter your name and valid e-mail');
       // exit out of this code block if something is wrong so that the user can correct it
       return;
-      // check to see if the password is not valid. If so, set an error message regarding the password.
     } else {
       setResultMessage('Thank you for leaving your message!');
       setApi({ userName, email, message });
@@ -78,6 +116,7 @@ function Contact() {
 
   return (
     <form>
+
       <div className='mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8'>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
@@ -167,13 +206,28 @@ function Contact() {
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
 
-          <button
-            type="submit"
-            onClick={handleFormSubmit}
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Submit
-          </button>
+
+          {/* Add the reCAPTCHA component */}
+          <ReCAPTCHA
+            sitekey="6LeCcV8pAAAAAJepcoSz0KZhSYASftCJe0NshQDC"
+            onChange={handleCaptchaChange}
+          />
+
+          {/* Show the submit button only when the captcha is passed */}
+          {captchaSuccess
+            ?
+            (<button
+              type="submit"
+              onClick={handleFormSubmit}
+              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Submit
+            </button>)
+            :
+            (<></>)
+          }
+
+
         </div>
 
 
