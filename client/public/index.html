@@ -2,16 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Personal Profile"
-    />
+    <meta name="description" content="Personal Profile" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -28,6 +25,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Personal Profile PWA</title>
+    <script id="react-dotenv" src="./env.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -42,26 +40,43 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
-  <script>
-    let _isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    var _isFirefox = typeof InstallTrigger !== 'undefined';
-    console.log("isSafari:"+_isSafari+",isFirefox:"+_isFirefox);
-    if (navigator && navigator.serviceWorker) {
-      if (_isFirefox) {
-        console.log("omit service worker (not needed)");
+
+    <script>
+      let _isSafari = /^((?!chrome|android).)*safari/i.test(
+        navigator.userAgent
+      );
+      var _isFirefox = typeof InstallTrigger !== "undefined";
+      console.log("isSafari:" + _isSafari + ",isFirefox:" + _isFirefox);
+      if (navigator && navigator.serviceWorker) {
+        if (_isFirefox) {
+          console.log("omit service worker (not needed)");
+        } else {
+          console.log(
+            "register service worker for edge and chrome (and the rest)"
+          );
+          navigator.serviceWorker
+            .register("%PUBLIC_URL%/simple_sw.js")
+            .then(function (reg) {
+              // registration worked
+              console.log(
+                "Registration succeeded. Scope:" +
+                  reg.scope +
+                  ",installing:" +
+                  reg.installing +
+                  ",waiting:" +
+                  reg.waiting +
+                  ",active:" +
+                  reg.active
+              );
+            })
+            .catch(function (error) {
+              // registration failed
+              console.warn("Registration failed with " + error);
+            });
+        }
       } else {
-        console.log("register service worker for edge and chrome (and the rest)");
-        navigator.serviceWorker.register('%PUBLIC_URL%/simple_sw.js').then(function(reg) {
-          // registration worked
-          console.log('Registration succeeded. Scope:' + reg.scope + ",installing:"+reg.installing+",waiting:"+reg.waiting+",active:"+reg.active);
-        }).catch(function(error) {
-          // registration failed
-          console.warn('Registration failed with ' + error);
-        });
+        console.log("no serviceWorker available");
       }
-    } else {
-      console.log("no serviceWorker available");
-    }
     </script>
+  </body>
 </html>

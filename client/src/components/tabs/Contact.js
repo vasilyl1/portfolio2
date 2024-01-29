@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { validateEmail } from '../utils/helpers';
 import ReCAPTCHA from 'react-google-recaptcha';
+import env from 'react-dotenv';
 
 function Contact() {
   // Create state variables for the fields in the form
@@ -20,9 +21,6 @@ function Contact() {
     setCaptchaToken(token);
   };
 
-  const Captcha = (value) => {
-    console.log('Captcha value:', value);
-  };
 
   // Verify the CAPTCHA token with the backend
   useEffect(() => {
@@ -35,7 +33,6 @@ function Contact() {
             body: JSON.stringify({ token: captchaToken }),
           });
           const data = await response.json();
-          console.log(data);
           // Proceed with further action based on the verification response
           setCaptchaSuccess(data.success);
         } catch (err) {
@@ -209,7 +206,7 @@ function Contact() {
 
           {/* Add the reCAPTCHA component */}
           <ReCAPTCHA
-            sitekey="6LeCcV8pAAAAAJepcoSz0KZhSYASftCJe0NshQDC"
+            sitekey={env.CAPSITE}
             onChange={handleCaptchaChange}
           />
 

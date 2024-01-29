@@ -1,5 +1,7 @@
 
 const { Comment } = require('../models/Comment');
+require('dotenv').config();
+const fetch = require("node-fetch");
 
 module.exports = {
 
@@ -21,10 +23,12 @@ module.exports = {
             const secretKey = process.env.CAPSECRET;
             const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `secret=${secretKey}&response=${token}`,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    secret: secretKey,
+                    response: token,
+                }),
+                
             });
             const data = await response.json();
             if (data.success) {
@@ -34,7 +38,7 @@ module.exports = {
             }
         } catch (err) {
             console.log(err);
-            res.status(500).json({ success: false, message: 'Captcha failed' });
+            res.status(500).json({ success: false, message: 'Backend to check Captcha failed' });
         };
 
 
