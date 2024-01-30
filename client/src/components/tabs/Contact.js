@@ -38,7 +38,8 @@ function Contact() {
         } catch (err) {
           console.error(err);
         }
-        setCaptchaToken(null);
+      } else {
+        setCaptchaSuccess(false);
       };
     };
     verifyCaptcha();
@@ -204,12 +205,6 @@ function Contact() {
         <div className="mt-6 flex items-center justify-end gap-x-6">
 
 
-          {/* Add the reCAPTCHA component */}
-          <ReCAPTCHA
-            sitekey={env.CAPSITE}
-            onChange={handleCaptchaChange}
-          />
-
           {/* Show the submit button only when the captcha is passed */}
           {captchaSuccess
             ?
@@ -221,9 +216,14 @@ function Contact() {
               Submit
             </button>)
             :
-            (<></>)
+            (
+              /* Render the reCAPTCHA component only when it is required */
+              <ReCAPTCHA
+                sitekey={env.CAPSITE}
+                onChange={handleCaptchaChange}
+              />
+            )
           }
-
 
         </div>
 
