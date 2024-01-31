@@ -17,11 +17,6 @@ function Contact() {
   const [captchaToken, setCaptchaToken] = useState(null);
   const [captchaSuccess, setCaptchaSuccess] = useState(false);
 
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
-
-
   // Verify the CAPTCHA token with the backend
   useEffect(() => {
     const verifyCaptcha = async () => {
@@ -35,11 +30,11 @@ function Contact() {
           const data = await response.json();
           // Proceed with further action based on the verification response
           setCaptchaSuccess(data.success);
+          // reset the captcha after 60 seconds
+          setTimeout(setCaptchaSuccess, 60000, false);
         } catch (err) {
           console.error(err);
         }
-      } else {
-        setCaptchaSuccess(false);
       };
     };
     verifyCaptcha();
@@ -204,7 +199,6 @@ function Contact() {
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
 
-
           {/* Show the submit button only when the captcha is passed */}
           {captchaSuccess
             ?
@@ -220,8 +214,9 @@ function Contact() {
               /* Render the reCAPTCHA component only when it is required */
               <ReCAPTCHA
                 sitekey={env.CAPSITE}
-                onChange={handleCaptchaChange}
+                onChange={setCaptchaToken}
               />
+
             )
           }
 
