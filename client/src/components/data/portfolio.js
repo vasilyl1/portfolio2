@@ -4,7 +4,7 @@ const projects = [
         name: 'Crypto Coin',
         description: 'An App for the beginners thinking to join the crypto world',
         repo:'https://github.com/vasilyl1/crypto-coin',
-        href: 'https://cryptocoin.herokuapp.com/',
+        href: 'https://cryptocoin-d9087ba4eb37.herokuapp.com/',
         tech:'REACT / MERN / Apollo /JavaScript / JWT / Bcrypt / GraphQL / Bootstrap',
         image:'./images/crypto.png',
         imageAlt:'Image of Crypto Coin application'
@@ -13,7 +13,7 @@ const projects = [
         name: 'My Career® Personal Development',
         description: 'Personal Development Content Management System. Team project',
         repo:'https://github.com/vasilyl1/my-career',
-        href: 'https://my-career.herokuapp.com/',
+        href: 'https://my-career-42eda4691397.herokuapp.com/',
         tech:'Handlebars / JavaScript / CSS/Node / Express / Sequelize / MySQL/AI',
         image: './images/imgProj2.png',
         imageAlt:'Image of Personal Development Management System application'
@@ -31,7 +31,7 @@ const projects = [
         name: 'CMS Blog',
         description: 'CMS-style blog web site, where developers can publish their blog posts and comment on other developers posts',
         repo:'https://github.com/vasilyl1/CMS-blog',
-        href: 'https://cms-blog-vl.herokuapp.com/',
+        href: 'https://cms-blog-ap-7862176e3e81.herokuapp.com/',
         tech:'Handlebars / JavaScript / CSS/Node / Express / Sequelize / MySQL / Bcrypt',
         image:'./images/techblog.png',
         imageAlt:'Image of CMS blog application'
@@ -41,7 +41,7 @@ const projects = [
         name: 'Book Search Engine',
         description:'Google Books API search engine using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server',
         repo: 'https://github.com/vasilyl1/book-search-engine',
-        href: 'https://google-book-search-engine.herokuapp.com/',
+        href: 'https://search-engine-books-61ae362ab2f6.herokuapp.com/',
         tech: 'REACT / MERN / Apollo /JavaScript / JWT / Bcrypt / GraphQL / Bootstrap',
         image: './images/google-books-search.png',
         imageAlt:'Image of Google Books Search Engine application'
@@ -51,7 +51,7 @@ const projects = [
         name: 'Text Editor Progressive Web Application',
         description:'Single page text editor app runs in the browser and meets PWA criteria. Features a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser.',
         repo: 'https://github.com/vasilyl1/pwa-text-editor',
-        href: 'https://t-editor.herokuapp.com/',
+        href: 'https://t-editor-45ed14807c06.herokuapp.com/',
         tech: 'PWA / IndexedDB / JavaScript / Babel compiler / Webpack / Service Worker / Cache API',
         image: './images/text-editor.png',
         imageAlt:'Image of Text Editor Progressive Web Application'
@@ -110,7 +110,7 @@ const projects = [
         name: 'Note Taker',
         description: 'Write and save notes in the cloud. With the same URL you can access and modify your notes from any device',
         repo:'https://github.com/vasilyl1/note-taker',
-        href: 'https://note-taker-vl1.herokuapp.com/',
+        href: 'https://note-taker-v-a38e4796c398.herokuapp.com/',
         tech:'JavaScript / CSS / Express JS / API / FS',
         image:'./images/my-note.png',
         imageAlt:'Image of Note Taker application'

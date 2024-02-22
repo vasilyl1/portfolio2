@@ -1,5 +1,5 @@
 # portfolio2
-Redesigned version of portfolio (TailWind)
+Redesigned version of REACT / service worker / EXPRESS application (TailWind styles and addition of the fully functional contact form recording the data into MongoDB and Google re-captcha for data quality control)
 # Professional Portfolio built using React client and Express server
 React application using Express server.
 
@@ -24,15 +24,15 @@ This portfolio page will be updated over the time with additional projects, link
 
 Below are a couple of screenshots on how the pages should look like:
 
-![Screenshot1](./client/src/images/screenshots/Screenshot%202023-03-22%20at%204.49.45%20PM.png)
-![Screenshot2](./client/src/images/screenshots/Screenshot%202023-03-22%20at%204.50.24%20PM.png)
-![Screenshot3](./client/src/images/screenshots/Screenshot%202023-03-22%20at%204.50.35%20PM.png)
-![Screenshot4](./client/src/images/screenshots/Screenshot%202023-03-22%20at%204.50.46%20PM.png)
+![Screenshot1](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.32.17 PM.png)
+![Screenshot2](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.32.42 PM.png)
+![Screenshot3](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.33.09 PM.png)
+![Screenshot4](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.33.31 PM.png)
+![Screenshot5](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.33.43 PM.png)
+![Screenshot6](/client/src/images/screenshots/Screenshot%202024-02-22%20at%2012.35.47 PM.png)
 
 
 ## Credits
-
-Some of the placeholder images used for this project are free no license required - thanks to https://www.freeimages.com/
 
 ## License
 
