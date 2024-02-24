@@ -18,6 +18,12 @@ In many cases several deployed projects is a minimum requirement to receive an i
 This page is deployed on the web at the following URL:
 https://portfolio-vasily.herokuapp.com/
 
+This application can be installed as a PWA (progressive web application) on your device. No need for AppStore or Google Play.
+
+    Chrome Desktop: Use install icon at the address bar.
+    Safari iOs: Use Add to Home Screen when sharing the page.
+    Chrome Android: Use Add to Home Screen when clicking three dot icon.
+
 ## Usage
 
 This portfolio page will be updated over the time with additional projects, links and information - so this is work in progress.

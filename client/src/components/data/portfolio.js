@@ -1,6 +1,15 @@
 
 const projects = [
     {
+        name: 'Accessor',
+        description: 'PWA app to simplify service access for non-compatible devices',
+        repo:'https://github.com/vasilyl1/accessor',
+        href: 'https://accessor-f38e41fc351e.herokuapp.com/',
+        tech:'REACT / REDUX / OAUTH2.0 /JavaScript / PWA / AI / Tailwind CSS',
+        image:'./images/accessor.png',
+        imageAlt:'Image of Accessor application'
+    },
+    {
         name: 'Crypto Coin',
         description: 'An App for the beginners thinking to join the crypto world',
         repo:'https://github.com/vasilyl1/crypto-coin',
