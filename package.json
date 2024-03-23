@@ -26,5 +26,8 @@
         "@babel/plugin-proposal-private-property-in-object": "7.21.11",
         "concurrently": "^5.2.0",
         "nodemon": "^2.0.4"
+    },
+    "dependencies": {
+        "nodemailer": "^6.9.13"
     }
 }
